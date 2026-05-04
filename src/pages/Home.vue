@@ -13,40 +13,42 @@ import { RouterLink } from 'vue-router'
         </div>
         
         <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter mb-8 italic">
-          ALEX STERLING<br/>
+          CHARLES VANDERDONCKT<br/>
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-indigo-200 to-pink-400">
-            Digital Architect.
+            Systems Engineer.
           </span>
         </h1>
         
-        <p class="text-xl text-slate-400 max-w-xl mb-10 leading-relaxed font-medium">
-          Transforming abstract concepts into precise digital experiences through code, geometry, and light. 
-          Specializing in high-performance frontend interfaces.
+        <p class="text-xl text-slate-400 max-w-xl mb-4 leading-relaxed font-medium">
+          Specializing in Applied Computer Science and Operational Technology. 
+          Currently architecting high-performance systems with Python and Cython.
         </p>
-
-        <div class="flex flex-wrap gap-6">
-          <RouterLink to="/portfolio" class="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold tracking-widest uppercase text-xs hexagon transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(79,70,229,0.3)]">
-            View Projects
-          </RouterLink>
-          <RouterLink to="/blog" class="px-8 py-4 glass-panel hover:border-indigo-400/30 text-white font-bold tracking-widest uppercase text-xs hexagon transition-all hover:scale-105 active:scale-95">
-            Read Blog
-          </RouterLink>
-        </div>
       </div>
     </div>
 
-    <!-- Hexagonal Gallery section -->
-    <div class="w-full flex flex-wrap justify-center gap-8 md:gap-16 mt-12">
-      <div v-for="i in 3" :key="i" class="group relative">
+    <!-- Hexagonal Navigation section -->
+    <div class="w-full flex flex-wrap justify-center gap-12 md:gap-24 mt-4">
+      <RouterLink to="/portfolio" class="group relative">
         <!-- Scale effect -->
-        <div class="w-56 h-64 hexagon bg-indigo-600 absolute top-0 left-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 scale-110"></div>
+        <div class="w-64 h-72 hexagon bg-indigo-600 absolute top-0 left-0 opacity-0 group-hover:opacity-20 transition-all duration-300 scale-110"></div>
         
-        <div class="w-56 h-64 hexagon glass-panel flex flex-col items-center justify-center cursor-pointer hover:border-indigo-400/50 transition-all p-8 text-center">
-          <div class="w-12 h-12 bg-indigo-500 triangle mb-6 shadow-[0_0_20px_rgba(99,102,241,0.4)]"></div>
-          <span class="text-xs font-bold tracking-[0.3em] uppercase mb-1">Focus {{ i }}</span>
-          <span class="text-[10px] opacity-40 uppercase tracking-widest">Digital Systems</span>
+        <div class="w-64 h-72 hexagon glass-panel flex flex-col items-center justify-center cursor-pointer hover:border-indigo-400/50 transition-all p-10 text-center shadow-xl">
+          <div class="w-14 h-14 bg-indigo-500 triangle mb-6 shadow-[0_0_30px_rgba(99,102,241,0.4)] transition-transform group-hover:scale-110"></div>
+          <span class="text-sm font-bold tracking-[0.4em] uppercase mb-2">View Portfolio</span>
+          <span class="text-[10px] opacity-40 uppercase tracking-[0.2em] font-mono">// OPEN_ARCHIVE</span>
         </div>
-      </div>
+      </RouterLink>
+
+      <RouterLink to="/blog" class="group relative">
+        <!-- Scale effect -->
+        <div class="w-64 h-72 hexagon bg-pink-600 absolute top-0 left-0 opacity-0 group-hover:opacity-20 transition-all duration-300 scale-110"></div>
+        
+        <div class="w-64 h-72 hexagon glass-panel flex flex-col items-center justify-center cursor-pointer hover:border-pink-400/50 transition-all p-10 text-center shadow-xl">
+          <div class="w-14 h-14 border-2 border-pink-500 hexagon mb-6 transition-transform group-hover:rotate-12"></div>
+          <span class="text-sm font-bold tracking-[0.4em] uppercase mb-2">Read Blog</span>
+          <span class="text-[10px] opacity-40 uppercase tracking-[0.2em] font-mono">// VIEW_LOGS</span>
+        </div>
+      </RouterLink>
     </div>
 
     <!-- Status footer element -->
@@ -55,10 +57,7 @@ import { RouterLink } from 'vue-router'
         <p>// LOC: DIGITAL SPACE</p>
         <p>// STATUS: ACTIVE_BUILD</p>
       </div>
-      <div class="flex flex-col items-end">
-        <div class="w-32 h-[1px] bg-gradient-to-r from-transparent to-white/20 mb-3"></div>
-        <div class="text-[10px] tracking-[0.3em] opacity-40 uppercase font-bold">© 2024 STERLING SYSTEMS</div>
-      </div>
+      <div></div>
     </div>
   </div>
 </template>
