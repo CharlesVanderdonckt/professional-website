@@ -3,8 +3,6 @@ import vue from '@vitejs/plugin-vue';
 import path from 'path';
 import {defineConfig, loadEnv} from 'vite';
 
-export const base = '/professional-website/';
-
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
@@ -20,6 +18,6 @@ export default defineConfig(({mode}) => {
       // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
     },
-    base: base,
+    base: '/professional-website/',
   };
 });
