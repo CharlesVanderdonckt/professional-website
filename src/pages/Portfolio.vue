@@ -2,8 +2,16 @@
 const careerHistory = [
   {
     title: "Eniris",
+    role: "Systems Engineer",
+    duration: "2026 — Present",
+    desc: "Developing within the realm of Operational Technology (OT), utilizing Python and Cython to build high-performance systems and integration layers.",
+    tags: ["Python", "Cython", "OT", "Software Engineering"],
+    color: "from-indigo-500 to-blue-600"
+  },
+  {
+    title: "Eniris",
     role: "Software Engineer (Internship)",
-    duration: "Ongoing",
+    duration: "2026",
     desc: "Developing within the realm of Operational Technology (OT), utilizing Python and Cython to build high-performance systems and integration layers.",
     tags: ["Python", "Cython", "OT", "Software Engineering"],
     color: "from-indigo-500 to-blue-600"
