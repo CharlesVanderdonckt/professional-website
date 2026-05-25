@@ -240,7 +240,7 @@ const printCV = () => {
     color: #334155 !important;
   }
 
-  .text-indigo-400, .text-indigo-200\/60 {
+  .text-indigo-400, .text-indigo-200/60 {
     color: #3b82f6 !important;
   }
 
@@ -248,7 +248,7 @@ const printCV = () => {
     color: #ec4899 !important;
   }
 
-  .border-white\/5 {
+  .border-white/5 {
     border-color: #cbd5e1 !important;
   }
 
@@ -260,6 +260,12 @@ const printCV = () => {
   /* Hide print-hide designated sections and app nav wrapper elements */
   .print-hide {
     display: none !important;
+  }
+}
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
 </style>
