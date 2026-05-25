@@ -79,7 +79,7 @@ const printCV = () => {
           <span>Save PDF / Print</span>
         </button>
         
-        <a href="/Charles_Vanderdonckt_CV.pdf" download="Charles_Vanderdonckt_CV.pdf" class="glass-panel text-[10px] font-bold tracking-[0.2em] uppercase px-5 py-3 rounded-none border border-pink-500/30 hover:border-pink-400 text-slate-300 hover:text-white hover:bg-pink-500/10 transition-all flex items-center space-x-2 shadow-lg">
+        <a :href="`{{import.meta.env.BASE_URL}}Charles_Vanderdonckt_CV.pdf`" download="Charles_Vanderdonckt_CV.pdf" class="glass-panel text-[10px] font-bold tracking-[0.2em] uppercase px-5 py-3 rounded-none border border-pink-500/30 hover:border-pink-400 text-slate-300 hover:text-white hover:bg-pink-500/10 transition-all flex items-center space-x-2 shadow-lg">
           <svg class="w-4 h-4 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
           </svg>
