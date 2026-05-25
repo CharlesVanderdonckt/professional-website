@@ -28,13 +28,13 @@ import { RouterLink } from 'vue-router'
 
     <!-- Hexagonal Navigation section -->
     <div class="w-full flex flex-wrap justify-center gap-12 md:gap-24 mt-4">
-      <RouterLink to="/portfolio" class="group relative">
+      <RouterLink to="/cv" class="group relative">
         <!-- Scale effect -->
         <div class="w-64 h-72 hexagon bg-indigo-600 absolute top-0 left-0 opacity-0 group-hover:opacity-20 transition-all duration-300 scale-110"></div>
         
         <div class="w-64 h-72 hexagon glass-panel flex flex-col items-center justify-center cursor-pointer hover:border-indigo-400/50 transition-all p-10 text-center shadow-xl">
           <div class="w-14 h-14 bg-indigo-500 triangle mb-6 shadow-[0_0_30px_rgba(99,102,241,0.4)] transition-transform group-hover:scale-110"></div>
-          <span class="text-sm font-bold tracking-[0.4em] uppercase mb-2">View Portfolio</span>
+          <span class="text-sm font-bold tracking-[0.4em] uppercase mb-2">View CV</span>
           <span class="text-[10px] opacity-40 uppercase tracking-[0.2em] font-mono">// OPEN_ARCHIVE</span>
         </div>
       </RouterLink>

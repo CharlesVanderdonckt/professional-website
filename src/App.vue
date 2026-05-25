@@ -5,7 +5,7 @@ import { RouterView, RouterLink } from 'vue-router'
 <template>
   <div class="min-h-screen bg-[#3a3b3c] text-white font-sans overflow-x-hidden selection:bg-indigo-500/30">
     <!-- Theme Background Decorations -->
-    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden print:hidden">
       <!-- Shape Clusters -->
       <div class="absolute top-[10%] left-[5%] w-64 h-64 asym-1 bg-indigo-500/10 blur-xl animate-float"></div>
       <div class="absolute top-[15%] left-[8%] w-48 h-48 asym-2 bg-pink-500/10 blur-lg rotate-12"></div>
@@ -22,13 +22,13 @@ import { RouterView, RouterLink } from 'vue-router'
       <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:80px_80px]"></div>
     </div>
 
-    <nav class="relative z-50 flex items-center justify-start px-12 py-10 max-w-7xl mx-auto">
+    <nav class="relative z-50 flex items-center justify-start px-12 py-10 max-w-7xl mx-auto print:hidden">
       <div class="flex items-center space-x-12 text-xs font-bold tracking-[0.4em] uppercase opacity-60">
         <RouterLink to="/" class="hover:text-indigo-400 hover:opacity-100 transition-all">
           Home
         </RouterLink>
-        <RouterLink to="/portfolio" class="hover:text-indigo-400 hover:opacity-100 transition-all">
-          Portfolio
+        <RouterLink to="/cv" class="hover:text-indigo-400 hover:opacity-100 transition-all">
+          CV
         </RouterLink>
         <RouterLink to="/blog" class="hover:text-indigo-400 hover:opacity-100 transition-all">
           Blog

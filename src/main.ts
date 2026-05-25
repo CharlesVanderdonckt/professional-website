@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import './index.css'
 
@@ -7,17 +7,18 @@ import './index.css'
 const Home = () => import('./pages/Home.vue')
 const Blog = () => import('./pages/Blog.vue')
 const BlogPost = () => import('./pages/BlogPost.vue')
-const Portfolio = () => import('./pages/Portfolio.vue')
+const CV = () => import('./pages/Portfolio.vue')
 
 const routes = [
   { path: '/', component: Home },
   { path: '/blog', component: Blog },
   { path: '/blog/:id', component: BlogPost },
-  { path: '/portfolio', component: Portfolio },
+  { path: '/cv', component: CV },
+  { path: '/portfolio', redirect: '/cv' },
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 })
 

@@ -55,19 +55,56 @@ const languages = [
   { name: "English", level: "Native", icon: "hexagon" },
   { name: "Dutch", level: "B1", icon: "triangle" }
 ]
+
+const printCV = () => {
+  window.print()
+}
 </script>
 
 <template>
   <div class="px-8 py-20 max-w-7xl mx-auto">
     <!-- Header -->
-    <div class="mb-20 flex items-center justify-between">
+    <div class="mb-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 print-hide">
       <div>
-        <h2 class="text-4xl font-bold mb-2 tracking-tighter uppercase italic">Professional Record</h2>
+        <h2 class="text-4xl font-bold mb-2 tracking-tighter uppercase italic">Curriculum Vitae</h2>
         <div class="w-24 h-[2px] bg-indigo-500 hexagon"></div>
       </div>
-      <div class="text-[10px] opacity-40 font-mono hidden md:block text-right">
+      
+      <!-- Actions: Save PDF & Download Fallback PDF -->
+      <div class="flex flex-wrap items-center gap-3">
+        <button @click="printCV" class="glass-panel text-[10px] font-bold tracking-[0.2em] uppercase px-5 py-3 rounded-none border border-indigo-500/30 hover:border-indigo-400 text-slate-300 hover:text-white hover:bg-indigo-500/10 transition-all flex items-center space-x-2 shadow-lg cursor-pointer">
+          <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+          </svg>
+          <span>Save PDF / Print</span>
+        </button>
+        
+        <a href="/Charles_Vanderdonckt_CV.pdf" download="Charles_Vanderdonckt_CV.pdf" class="glass-panel text-[10px] font-bold tracking-[0.2em] uppercase px-5 py-3 rounded-none border border-pink-500/30 hover:border-pink-400 text-slate-300 hover:text-white hover:bg-pink-500/10 transition-all flex items-center space-x-2 shadow-lg">
+          <svg class="w-4 h-4 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+          </svg>
+          <span>Download PDF file</span>
+        </a>
+      </div>
+
+      <div class="text-[10px] opacity-40 font-mono text-left md:text-right">
         ID: VANDERDONCKT_V.01<br/>
         CLEARANCE: LEVEL_4
+      </div>
+    </div>
+
+    <!-- Static Header for Print (Only visible during print) -->
+    <div class="hidden print:block mb-12 border-b-2 border-slate-300 pb-6">
+      <div class="flex justify-between items-end">
+        <div>
+          <h1 class="text-4xl font-extrabold tracking-tight uppercase">Charles Vanderdonckt</h1>
+          <p class="text-indigo-700 font-bold uppercase tracking-wider text-sm mt-1">Systems Engineer</p>
+        </div>
+        <div class="text-right text-xs font-mono text-slate-600 space-y-1">
+          <p>Koksijde, Belgium</p>
+          <p>charleyvddwork@gmail.com</p>
+          <p>https://www.howest.be</p>
+        </div>
       </div>
     </div>
 
@@ -162,7 +199,7 @@ const languages = [
     </div>
 
     <!-- Triangle grid background decoration -->
-    <div class="absolute left-0 top-1/2 -z-10 opacity-5 pointer-events-none rotate-180">
+    <div class="absolute left-0 top-1/2 -z-10 opacity-5 pointer-events-none rotate-180 print:hidden">
       <svg width="400" height="400" viewBox="0 0 100 100">
         <path d="M0 0 L100 0 L50 86 Z" fill="none" stroke="indigo" stroke-width="0.1" />
         <path d="M50 86 L150 86 L100 0 Z" fill="none" stroke="indigo" stroke-width="0.1" />
@@ -174,5 +211,55 @@ const languages = [
 <style scoped>
 .clip-tri {
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+</style>
+
+<style>
+@media print {
+  /* Global page-override for pristine, ultra-professional white paper PDF output */
+  html, body, #root, .min-h-screen {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #0d1117 !important;
+  }
+
+  /* Make panels elegant on white paper */
+  .glass-panel {
+    background: #f8fafc !important;
+    border: 1px solid #cbd5e1 !important;
+    color: #0d1117 !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+  }
+
+  .text-white, h1, h2, h3, h4, span {
+    color: #0d1117 !important;
+  }
+
+  .text-slate-400, .text-slate-300, p {
+    color: #334155 !important;
+  }
+
+  .text-indigo-400, .text-indigo-200\/60 {
+    color: #3b82f6 !important;
+  }
+
+  .text-pink-400 {
+    color: #ec4899 !important;
+  }
+
+  .border-white\/5 {
+    border-color: #cbd5e1 !important;
+  }
+
+  /* Force full opacity on badges / text elements for maximum readability */
+  .opacity-40, .opacity-60 {
+    opacity: 0.9 !important;
+  }
+
+  /* Hide print-hide designated sections and app nav wrapper elements */
+  .print-hide {
+    display: none !important;
+  }
 }
 </style>
